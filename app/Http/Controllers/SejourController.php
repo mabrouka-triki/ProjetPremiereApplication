@@ -134,14 +134,14 @@ class SejourController extends Controller {
         }
     }
 
-    public function rechercheSejour($annee, $mois) {
+    public function rechercheSejour($mois, $annee) {
         try {
             // Récupération des données
-            $DatedebSej = Request::input('DatedebSej');
-            $DateFinSej = Request::input('DateFinSej');
+            $mois = Request::input('month');
+            $annee = Request::input('year');
 
             $unSejour = new ServiceSejour();
-            $mesSejours = $unSejour->recherchesejour($annee, $mois);
+            $mesSejours = $unSejour->recherchesejour($mois, $annee);
 
             return view('listerSejours', compact('mesSejours'));
         } catch (MonException $e) {

@@ -87,12 +87,12 @@ class ServiceSejour
         }
     }
 //rechercher sejour
-    public function rechercheSejour($annee, $mois)
+    public function rechercheSejour($mois, $annee)
     {
         try {
             $mesSejours = DB::table('sejour')
-                ->whereMonth('DatedeSej', '=', $mois)
-                ->whereYear('DatedeSej', '=', $annee)
+                ->whereMonth('DateDebSej', '=', $mois)
+                ->whereYear('DateDebSej', '=', $annee)
                 ->get();
             return $mesSejours;
         } catch (QueryException $e) {

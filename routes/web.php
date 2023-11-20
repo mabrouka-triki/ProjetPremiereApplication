@@ -71,8 +71,8 @@ Route::get('/supprimerSejour/{id}', [SejourController::class, 'suppression']);
 
 Route::get('/formSaisieMois', [SejourController::class, 'rechercheSejour']);
 
-Route::post('/rechercheSejour', [
-    'as' => 'postrechercheMoisSejour',
-    'uses' => 'App\Http\Controllers\SejourController@postrechercheMoisSejour'
+Route::post('/postrechercheMoisSejour', [
+    'as' => 'rechercheSejour',
+    'uses' => 'App\Http\Controllers\SejourController@rechercheSejour'
 ]);
 
