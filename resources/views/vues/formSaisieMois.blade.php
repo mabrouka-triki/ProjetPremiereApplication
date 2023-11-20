@@ -3,8 +3,7 @@
         @section('content')
 
             <h1>Recherche un séjour sur un critère </h1>
-            {!! Form::open(['url' => 'postrechercheMoisSejour', 'method' => 'post']) !!}
-                @csrf
+            <form method="POST" action="{{url('postrechercheMoisSejour')}}" >
                 <div class="form-group">
                     <label for="month">Mois :</label>
                     <select name="month" id="month" class="form-control">
