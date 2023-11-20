@@ -4,9 +4,10 @@
 
             <h1>Recherche un séjour sur un critère </h1>
             <form method="POST" action="{{url('postrechercheMoisSejour')}}" >
+
                 <div class="form-group">
-                    <label for="month">Mois :</label>
-                    <select name="month" id="month" class="form-control">
+                    <label for="DateDebSej">Mois :</label>
+                    <select name="DateDebSej" id="DateDebSej" class="form-control">
                         <option value="1">Janvier</option>
                         <option value="2">Février</option>
                         <option value="3">Mars</option>
@@ -20,12 +21,10 @@
                         <option value="11">Novembre</option>
                         <option value="12">Décembre</option>
                     </select>
-
                 </div>
-
                 <div class="form-group">
-                    <label for="year">Année :</label>
-                    <select name="year" id="year" class="form-control">
+                    <label for="DateDebSej">Année :</label>
+                    <select name="DateDebSej" id="DateDebSej" class="form-control">
                             <option value="1">2000</option>
                             <option value="2">2001</option>
                             <option value="3">2002</option>
@@ -43,6 +42,7 @@
                             <option value="15">2014</option>
                             <option value="16">2015</option>
                             <option value="17">2016</option>
+                            <option value="18">2017</option>
                         </select>
                 </div>
 
@@ -54,4 +54,4 @@
         @endsection
 
 
-@stop
+

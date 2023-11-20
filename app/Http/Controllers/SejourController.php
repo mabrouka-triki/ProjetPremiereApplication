@@ -117,8 +117,6 @@ class SejourController extends Controller {
         }
     }
 
-
-
      public function suppression($id) {
 
         try {
@@ -133,22 +131,20 @@ class SejourController extends Controller {
             return view('Error', compact('erreur'));
         }
     }
-
-    public function rechercheSejour($mois, $annee) {
+    public function rechercheSejour() {
         try {
             // Récupération des données
-            $mois = Request::input('month');
-            $annee = Request::input('year');
 
+            $mois = Request::input('DateDebSej');
+            $annee = Request::input('DateDebSej');
             $unSejour = new ServiceSejour();
             $mesSejours = $unSejour->recherchesejour($mois, $annee);
-
-            return view('listerSejours', compact('mesSejours'));
+            return view('vues/formSaisieMois', compact('mesSejours'));
         } catch (MonException $e) {
             $erreur = $e->getMessage();
             return view('Error', compact('erreur'));
         } catch (Exception $ex) {
-            $erreur = $ex->getMessage(); // fix variable name here
+            $erreur = $ex->getMessage();
             return view('Error', compact('erreur'));
         }
     }

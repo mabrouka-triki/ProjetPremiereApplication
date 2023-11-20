@@ -45,8 +45,7 @@ class ServiceSejour
         }
     }
 
-    public function ajoutSejour($NumCli, $NumEmpl, $DatedebSej,
-                                $DateFinSej, $NbPersonnes)
+    public function ajoutSejour($NumCli, $NumEmpl, $DatedebSej, $DateFinSej, $NbPersonnes)
     {
         try {
             DB::table('sejour')->insert(
@@ -86,7 +85,7 @@ class ServiceSejour
             throw new MonException($e->getMessage(), 5);
         }
     }
-//rechercher sejour
+        //rechercher sejour
     public function rechercheSejour($mois, $annee)
     {
         try {
